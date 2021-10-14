@@ -1,0 +1,20 @@
+mandatory: True
+event: final_screen
+question: Final Report
+subquestion: |
+
+  Here is your document.
+  
+  <a class="btn btn-primary" href=${ report.url_for(attachment=True) }>Download Report</a>
+  
+  This report has also been emailed to you.
+  
+  **You can submit this report to the SA Commissioner for Equal Opportunity. This link is here to direct you:**
+  
+  <a href="https://forms.sa.gov.au/#/form/59964287ad9c5a332435b63f/app/613ab1264d43317950b665fb">SA Commissioner for Equal Opportunity</a>
+
+allow emailing: False
+include attachment notice: False
+include download tab: False
+manual attachment list: True
+---

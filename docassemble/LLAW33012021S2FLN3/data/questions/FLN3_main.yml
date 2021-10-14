@@ -1,0 +1,72 @@
+objects:
+  - refused_person: Individual
+  - submitter: Individual
+  - sender: Individual
+---
+mandatory: True
+event: welcome_screen
+question: "Welcome to FLN3 reporting app"
+subquestion: |
+ Welcome to FLN3. We have designed this app to make reporting assistance animal accomodations refusals quick and easy.
+  **Disclaimer: This application does not provide legal advice and should not be taken    as such. This should not be considered a legal document.**
+buttons:
+  - I agree and wish to continue: continue
+  - I do not agree and wish to exit: exit
+---
+
+mandatory: True
+code: |  
+  sender.name.first = "Paw Rights" #assigning email and sender name
+  sender.email = "paws-rights-noreply@flinders.edu.au"
+  #pulling date for the template
+  from datetime import date
+  from datetime import datetime
+  now = datetime.now()
+  todays_date = str(date.today())
+  current_time = now.strftime("%H:%M:%S")
+  #determining if the submitter is the user or submitting for someone else and assigning pronouns
+  if(who_is_submitter == "Myself"):
+    selfsubmitted = True
+    phonenumberquestion = "What is your phone number?"
+    emailquestion = "What is your email address?"
+    pronoun = "you"
+    refused_person.name.first = submitter.name.first
+    refused_person.name.last = submitter.name.last
+  else:
+    selfsubmitted = False
+    phonenumberquestion = "What is the phone number of the refused person?"
+    emailquestion = "What is the email address of the refused person?"
+    pronoun = "they"
+    submitter.name.first
+    submitter.name.last
+    refused_person.name.first
+    refused_person.name.last
+  #starting questions    
+  pz_phoneno #phone number
+  refused_person.email #email
+  acco_Options #buttons for options
+  acco_Address #address
+  inc_date #date of the incident
+  inc_time #time of the incident
+  if(staffHasReason): #asking if the staff has a reason (yes/no)
+   staffReason
+  else:
+    staffReason = "N/A" #assigning N/A easier for template
+  if(staffRequestedPaperwork): #asking if the staff asked for paperwork
+    IDWasShown #if id was shown we will continue to ask if they showed ID
+    if(IDWasShown == False): #if they didnt show ID it will show it is unlawful
+      notUnlawful
+      if(notUnlawful == 'exit'): #exiting app
+        command('exit')
+  else:
+    IDWasShown = "N/A"
+  if(supporting_evidence): #attaching evidence
+    attached_evidence
+  else: #leaving evidence blank
+    attached_evidence = []
+  review #going to review screen
+  send_email(to=refused_person, sender=sender, template=email_template, attachments=[report]) #sending email
+---
+include:
+  - FLN3_questions.yml 
+---
