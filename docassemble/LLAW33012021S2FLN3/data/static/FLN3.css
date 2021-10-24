@@ -1,0 +1,180 @@
+/* Navbar main colour */
+.navbar{background-color: rgb(255,218,108) !important;}
+
+.navbar .navbar-brand{
+  color : #000;
+  font-weight: bolder;
+  font-size: 2.0em;
+}
+.navbar .navbar-brand:hover{color: #000;}
+
+.navbar .nav-item a{color: #000 !important;}
+
+.navbar .dropdown-menu{background-color: rgba(255,218,108,0.5);}
+
+.dropdown-item:hover{background-color: rgba(255,218,108,0.8);}
+
+.navbar-brand .media {margin-top: -0.1em;}
+
+.navbar-brand {line-height: 1em;}
+
+/* Back button in navbar*/
+.navbar form button{
+  border: 0;
+  margin-right: 0.5em;
+  color: #fff !important;
+  background-color: rgb(255,218,108) !important;
+  border-color: rgba(255,218,108) !important;
+  border-radius: 0.25rem !important;
+  font-size: 1.1rem;
+  padding: 0.275rem 0.85rem 0.375rem 0.65rem;
+}
+
+/* Back button in navbar hover */
+.navbar form button:hover{
+  color: #fff !important;
+  background-color: rgba(237,28,36,0.7) !important;
+  border-color: rgba(0,0,0,0) !important;
+  border-radius: 0.25rem !important;
+}
+
+/*
+.navbar form button:focus {
+  outline-width: 0px;
+  outline-color: rgb(255, 255, 255);
+  outline-style: none;
+  outline-width: 0px;
+  box-shadow: 0 0 0 0.2rem #268fff80 !important; /* #343a4080 #C4682780 */
+}
+/*
+
+/* Primary Buttons */
+.btn-primary {
+  background-color: rgba(34,177,76,0.5) !important;
+  border-color: rgba(34,177,76) !important;
+  /* font-weight: bold !important; */
+}
+.btn-primary:hover {
+  /* Flinders navy, darkened */
+  background-color: rgba(0, 24, 48) !important; /* #1C0359 */
+  border-color: rgba(0, 24, 48) !important; /* #1C0359 */
+}
+
+/* keep default blue/red colours on first screen */
+fieldset.continue-exit-buttons div .btn-primary {
+  background-color: rgb(34,177,76) !important;
+  border-color: rbg(34,177,76) !important;
+}
+fieldset.continue-exit-buttons div .btn-primary:hover {
+  background-color: #0069d9 !important;
+  border-color: #0069d9 !important;
+}
+
+/* keep default blue/red colours for yes no button screens */
+fieldset.yes-no-buttons div .btn-primary:nth-of-type(1) {
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+}
+fieldset.yes-no-buttons div .btn-primary:nth-of-type(1):hover {
+  background-color: #0069d9 !important;
+  border-color: #0069d9 !important;
+}
+fieldset.yes-no-buttons div .btn-primary:nth-of-type(2) {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+fieldset.yes-no-buttons div .btn-primary:nth-of-type(2):hover {
+  background-color: #c82333 !important;
+  border-color: #c82333 !important;
+}
+
+.da-pad-for-navbar  { padding-top: 76px; }
+.da-top-for-navbar  { top: 76px;         }
+
+
+fieldset.multicolor-buttons div button:nth-of-type(6n+0) {
+  background-color: #0069d9 !important;
+  border-color: #0069d9 !important;
+}
+fieldset.multicolor-buttons div button:nth-of-type(6n+1) {
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+}
+fieldset.multicolor-buttons div button:nth-of-type(6n+2) {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+fieldset.multicolor-buttons div button:nth-of-type(6n+3) {
+  background-color: #0D6709 !important;
+  border-color: #0D6709 !important;
+}
+fieldset.multicolor-buttons div button:nth-of-type(6n+4) {
+  background-color: rgb(0,255,255) !important;
+  border-color: #123456 !important;
+}
+fieldset.multicolor-buttons div button:nth-of-type(6n+5) {
+  background-color: rgb(255,0,255) !important;
+  border-color: #123456 !important;
+}
+
+fieldset.multicolor-buttons div button:nth-of-type(6n+0):hover {
+  background-color: #004EA4 !important;
+  border-color: #004EA4 !important;
+}
+fieldset.multicolor-buttons div button:nth-of-type(6n+1):hover {
+  background-color: #140666 !important;
+  border-color: #140666 !important;
+}
+fieldset.multicolor-buttons div button:nth-of-type(6n+2):hover {
+  background-color: #AE1E2C !important;
+  border-color: #AE1E2C !important;
+}
+fieldset.multicolor-buttons div button:nth-of-type(6n+3):hover {
+  background-color: #083D05 !important;
+  border-color: #083D05 !important;
+}
+fieldset.multicolor-buttons div button:nth-of-type(6n+4):hover {
+  background-color: rgb(100,255,255) !important;
+  border-color: #FF0000 !important;
+}
+fieldset.multicolor-buttons div button:nth-of-type(6n+5):hover {
+  background-color: rgb(255,100,255) !important;
+  border-color: #FF0000 !important;
+}
+
+.full-width-field, .full-width-field .dainput-embedded, .half-width-field .dainput-embedded {
+  display: inline;
+  position: relative;
+  width: 100% !important;
+}
+.half-width-field {
+  display: inline;
+  position: relative;
+  width: 50%;
+}
+
+.review-table td {
+  vertical-align: middle;
+}
+.review-table thead {
+  font-weight: 400;
+}
+
+#incident-info, .refusal-map-container {
+  margin-bottom: 1em;
+}
+
+/* enlarge buttons on most screens */
+.form-actions, .refusal-map-container {
+  font-size: 1.2em;
+}
+/* Makes the buttons in the body larger
+
+  .form-actions .btn, .large-buttons .btn {
+  font-size: 1em;
+  padding: 0.375em 0.75em 0.375em 0.75em;} */
+
+/* prevent buttons on selected screens from being enlarged
+.default-size-buttons .form-actions {
+  font-size: 1em;
+} */

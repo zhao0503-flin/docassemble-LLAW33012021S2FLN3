@@ -2,16 +2,52 @@ objects:
   - refused_person: Individual
   - submitter: Individual
   - sender: Individual
+  - YLTlogo: DAStaticFile.using(filename='FLN3_logo.png')
 ---
+Features:
+  css: FLN3.css
+  debug: False
+  hide standard menu: True
+---
+mandatory: True
+code: |
+  set_parts(logo='<img src="' + YLTlogo.url_for() + '" style="height: 75px;">')
+---
+# Modify the post default screen part to attribute work to Flinders and your client
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: right">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with Amanda Muller and Ellen Fraser-Barbour
+    </i></small></cite>
+    </div>
+    </div>
+---
+metadata:
+  title: |
+    Paws Rights
+  description: |
+    A quick and easy way to report an accomodation refusal in South Australia.
+  authors:
+    - name: Peter Zhao, Yi-Lynn Teh, Cassandra Newsham, Michelle Samuel, and Alex Habib.
+      organization: Flinders University
+  revision_date: 2021-10-25
+  exit url: https://www.dpti.sa.gov.au/contact_us/compliments_and_complaints
+--- 
 mandatory: True
 event: welcome_screen
 question: "Welcome to FLN3 reporting app"
 subquestion: |
  Welcome to FLN3. We have designed this app to make reporting assistance animal accomodations refusals quick and easy.
+ 
   **Disclaimer: This application does not provide legal advice and should not be taken    as such. This should not be considered a legal document.**
 buttons:
   - I agree and wish to continue: continue
   - I do not agree and wish to exit: exit
+    url: https://www.dpti.sa.gov.au/contact_us/compliments_and_complaints
 ---
 
 mandatory: True
@@ -57,7 +93,7 @@ code: |
     if(IDWasShown == False): #if they didnt show ID it will show it is unlawful
       notUnlawful
       if(notUnlawful == 'exit'): #exiting app
-        command('exit')
+        message("Exit screen","Thanks for using the FLN3 reporting app!",url="https://www.dpti.sa.gov.au/contact_us/compliments_and_complaints")
   else:
     IDWasShown = "N/A"
   if(supporting_evidence): #attaching evidence

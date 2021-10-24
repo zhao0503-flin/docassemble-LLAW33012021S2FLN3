@@ -18,21 +18,27 @@ buttons:
 question: Please enter the full name of the person who has been refused entry?
 fields:
   - First Name: refused_person.name.first
+    default: Mia
   - Last Name: refused_person.name.last
+    default: Teh
 ---
 question: What is your full name?
 fields:
   - First Name: submitter.name.first
+    default: Peter
   - Last Name: submitter.name.last
+    default: Zhao
 ---
 question: ${phonenumberquestion}
 fields:
   - Phone Number: pz_phoneno
+    default: 0410929811
 ---
 question: ${emailquestion}
 fields:
   - Email: refused_person.email
     datatype: email
+    default: pzhao25@gmail.com
 ---
 question: "Which kind of accomodation were ${pronoun} trying to use when ${pronoun} were refused?"
 field: acco_Options
@@ -44,7 +50,9 @@ buttons:
 question: "What is the address of the accomodation?"
 fields: 
   - Address: acco_Address
+    default: 57 Gouger St
   - Postcode: acco_Postcode
+    default: 5000
 ---
 question: "Did the staff state their reason for the refusal?"
 yesno: staffHasReason
@@ -53,6 +61,7 @@ question: "What was said by the staff during the refusal?"
 fields:
   - Details: staffReason
     input type: area
+    default: I do not like dog hair
 ---
 question: "Were you asked to show accredited Assistance Dog identification or paperwork?"
 yesno: staffRequestedPaperwork
@@ -60,13 +69,17 @@ yesno: staffRequestedPaperwork
 question: "Was ID provided?"
 yesno: IDWasShown
 ---
-question: "Unfortunately, as ${pronoun} did not provide evidence of your Assistance Animal's accreditation, this refusal is not unlawful under s 54 of the Disability Discrimination Act 1992 (Cth). If you continue, you may be unsucessful in reporting this refusal."
+question: Please note
 subquestion: |
-  Would you like to continue anyway?
+ Under section 54A of the Disability Discrimination Act it is not unlawful for an accommodation provider to request, that someone with an assistance animal produces evidence that the assistance animal is trained by an accredited training body to meet standards of hygiene and behavior appropriate for an animal in a public place.
+ 
+ If you choose to submit a complaint to the Equal Opportunities Commission, the Commission will consider all the facts of the complaint you have submitted to determine whether an act of discrimination has taken place.
+ 
+ Would you like to continue anyway?
 field: notUnlawful
 buttons:
-  - Exit: exit
   - Continue: continue
+  - Exit: exit
 ---
 question: "When did the incident occur?"
 subquestion: "This defaults to today’s date, but you can edit it if needed"
